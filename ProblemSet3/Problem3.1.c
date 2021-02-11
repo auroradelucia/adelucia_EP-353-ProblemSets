@@ -5,6 +5,6 @@ int main() {
 char midiNote = 'C'; // C in this case equals 67
 float frequency = pow(2, ((float)midiNote-69)/12)*440;
 
-printf("The frequency of a MIDI note number %d is %fHz\n", midiNote, frequency);//using %d instead of %C because I want the numerical value, not the literal character
+printf("The frequency of a MIDI note number %d is %fHz\n", midiNote, frequency);//using %d instead of %c because I want the numerical value, not the literal character
 return 0; //\t is for each of the tabs, and \n is for new lines //0 means we've reached the end
 }
