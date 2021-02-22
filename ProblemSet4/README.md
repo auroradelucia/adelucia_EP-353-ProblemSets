@@ -1,62 +1,84 @@
 # adelucia_EP-353-ProblemSets
  
-###Project Name
-Problem Set 3
+### Project Name
+
+Problem Set 4
 
 ### Submitted by
+
 Aurora De Lucia
 
-###For Course
+### For Course
+
 EP-353
 
-###Due Date
-2/17/2020
+### Due Date
 
-###Submission Date
-2/11/2020
+2/24/2020
 
-###Files Included
+### Submission Date
+
+2/22/2020
+
+### Files Included
 README.md
-Problem3.1.c
-Problem3.2.c
-Problem3.3.c
 
-###Purpose
-The purpose was to understand more about math and swtiches and a for loop.
+Problem4.1.c
 
-###Description
-####Problem 3.1
-This was basically doing a math equation - specifically taking something to a power [so, pow()]. It was about making sure the frequency is correct for whatever MIDI note you put in. 
+Problem4.2.c
 
-####Problem 3.2
-More than anything, this was about learning to switch - having certain integers respond to notes.  
+Problem4.3.c
 
-####Problem 3.3
-This was building on the switch with a for loop, that loops through each integer outlined in the commannd.
+LoremIpsum.txt
 
-###Build and Run Commands
+### Purpose
+
+The purpose was to understand more about variables, functions, mod operator, for & while loops.
+
+### Description
+#### Problem 4.1
+
+Counting character lines from an external file
+
+#### Problem 3.2
+
+Asking and answering a question within terminal and having that determine what is printed.
+
+#### Problem 3.3
+
+Seeing the difference between global and local variables as you make a table and count backwards with each of them
+
+### Build and Run Commands
+
 Compiled teach problem set with clang
 
 
-```clang Problem3.1.c  ```
+```clang Problem4.1.c  ```
 
-```clang Problem3.2.c  ```
+```clang Problem4.2.c  ```
 
-```clang Problem3.3.c  ```
+```clang Problem4.3.c  ```
 
 
-and ran each one succesffully using the same command -
+and ran problem set 1 one succesffully using the command -
+
+
+``` ./a.out LopemIpsum.txt ```
+
+and problem sets 2 and 3 by using the same command -
 
 
 ``` ./a.out ```
+
  
-For problem set 1, it successfully printed the frequency of a MIDI note. (I tried it with a few different notes, to be sure the math equation worked.)
+For problem set 1, tells us how many lines are in the file we call up. (In this case, it's 15 in the LoremIpsum text file.)
 
-For problem set 2, it assigned MIDI notes based on integers.
+For problem set 2, we're given words based on how many bars there are
 
-For problem set 3, it had a loop that not only assigned integers, but went through an entire loop of them in one command.
+For problem set 3, it successfully makes a table seeing the difference between local and glbal integers.
 
-###Acknowledgement
+### Acknowledgement
+
 - The Problem Set homework assignment
 - Markdown Cheatsheat
 - Lecture video
