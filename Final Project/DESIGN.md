@@ -1,83 +1,36 @@
-# User Manual Documentation 
+# Design
  
 ### Aurora's Reverb
 
-#### The gist
+So, I started with your file (Reverb.c in our class materials), and then changed and built from there. 
 
-Basically, this is a take on your original reverb code that I've modified and expanded. So, the first thing you're gonna wanna do is take a file and put it in the same folder "AurorasReverb.c" is in.
+I guess we can kind of start from the top and go from there. 
 
-***You also must make sure that LPF.c is in the same folder, because it is used in AurorasReverb.c***
+So, at the very top, I added an output file name that would keep the original file name and add "AddedReverb" to the top.
 
-For demonstration purposes, I've put in CheeseSynth.wav, because the changes are fairly obvious when it spits out the new version of that file. 
+Then, I added a print function where I tell the user things they need to input, and I give them the ability to enter their own file, and change three parameters. 
 
-I also added "ToxicTest.wav" which is just Britney Spears' Toxic, as a test, so you can see the reverb more on a whole song rather than a snippet. 
+After that, I enter the defaults for feedback, cutoff, and size for if the user doesn't enter anything. 
+And then I have arrays for if they do want to enter values of their own. 
 
-(The bigger/longer the file, the longer it takes to get your new added reverb file. It will do it. It just may take a minute.)
+Also, after that, I basically map the input range (0-1) to the actual (bigger) output ranges (1-100). 
 
-If you would like to try your own file, please make sure it's a mono (not stereo) file, and rthat it's a .wav.
+And then, I include the function from my other document - LPF.c, which is basically a low pass filter included with the reverb. 
 
-(If you forget or don't see any of the instructions in this documentation, you'll be reminded in the terminal when you go to run it.)
+The low pass filter itself takes the average sample of things around it, sort of 'blurring' the sound (if you're likening it to what would happen with a visual blur averaging the frames). 
 
-So, you'll navigate to your folder in the terminal, as usual. Assuming you're not moving folders around, everything you need should be available in the "Final Project" folder available in my GitHub
+Part of the reason for the low pass filter is to try to mimic reverb as much a possible, which often doesn't reflect as much in the higher frequencies (to my understanding). 
 
-Specifically, this is the web address you will go to to find it. 
+Then, I made a bunch of delay lines which get random delay times, which all make up the reverb function. 
 
-``` https://github.com/auroradelucia/adelucia_EP-353-ProblemSets/tree/main/Final%20Project ```
+(Anything that isn't clear from this document should probably be clear in the comments of the file, hopefully.)
 
-Okay, now that you know the gist, let me give you a super specific - 
+### Why I Did What I Did
 
-## STEP BY STEP
+As far as why I made the decisions I did, to be honest, a lot of them were just what I was capable of. If I had unlimited knowledge, I would've had the user enter more parameters, and would've made it a better user experience, in general, like where you enter the parameters one at a time on different lines instead of all together at the top. 
 
-### 1) Navigate to my GitHub folder, available here 
+Also, I think if I had more knowledge/ability, I would make it so stereo files would also work, and files that weren't just .wav. 
 
-``` https://github.com/auroradelucia/adelucia_EP-353-ProblemSets/tree/main/Final%20Project ```
+Also, on the backend, I'm sure someone with more skill than I have could've made the backend cleaner and sleeker. But I tried my best! haha 
 
-### 2) Add a mono .wav sound file - *if* you want to use your own, otherwise, you may use what I already have.
-
-### 3) Within your terminal, using the command line, navigate to that terminal folder
-
-[So, for me, that's 
-
-``` cd /Users/rora/Documents/GitHub/adelucia_EP-353-ProblemSets/Final\ Project ```
-
-I'm sure yours will be a different username (not "Rora") at the top.]
-
-### 4) Compile using the command below
-
- ``` clang AurorasReverb.c -lsndfile ```
- 
- *do not forget -lsndfile*
- 
- ### 5) Once it's compiled, you may run the code using
- 
-  ``` ./a.out ```
-  
-And then you will get a set of instructions. [If you would like, you can skip that part, enter all this information from the beginning, skipping the ./a.out phase where you just get intstructions
-
-### 5A) Basically, you'll enter
-
- ``` ./a.out [YourFileName.wav] FeedbackParameter from 0-1 CutoffParameter from 0-1 SizeParameter from 0-1 ```
- 
-**(There are spaces between each thing. So, Basically, an example of exactly how this would look is - )**
- 
-  ``` ./a.out CheeseSynth.wav 0.8 0.6 0.5 ```
- 
-
-## Notes
-
-- If you do not use anything after your file name, it will resort to the defaults which do give a fair amount of reverb, so it is possible to run it, with example, say 
-
-  ``` ./a.out CheeseSynth.wav ```
-  
-  And like I said, it will then just do the defaults.
-  
-- As I said earlier, the numbers go from 0 - 1 and represent feedback, cutff, and delay
-
-	- So with feedback, it's just the amount of feedback, obv., the closer you get to 1, the higher it will be. 
-
-	- with cutoff, it will be more open/leave more high frequiences the higher you go, so the *more* you want it to technically "cutoff," the lower the number you give 
-
-	- and then in the final number, the bigger the delay you want, the bigger you make that last number.
-
-## The end!
-I believe this covers everything, I hope. Obviously if you have any questions, ask me anytime. Thanks a million! 
+As far as the more positive side - the additions I made from your file, I did it so that the reverb was bigger, with I suppose more possibilities, and more user control. 
